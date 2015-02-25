@@ -9,31 +9,35 @@ public class post {
 		this.content=content;
 	}
 	public String getContent(){
-		return this.content;
+		return content;
 	}
 	public void setContent(String content){
 		this.content=content;
 	}
-	public String toSting(){
+	public String toString(){
 		return this.date+"\n"+this.content;
 	}
 	public boolean equals(Object o){
-		boolean ans = true;
+		if (o==null)
+			return false;
 		
-		o.getClass();
+		boolean ans = true;
+		if(o.getClass()!=this.getClass())
+			return false;
+		
 		post post=(post) o;
-		return ans;
+		if(this.content==post.content)
+			return true;
+		else return false;
 	}
 	public int hashCode(){
-		int hashCode=0;
-		//TODO
-		date.hashCode();
-		return hashCode;
+		int a =date.hashCode();
+		int b = content.hashCode();
+		return a*7+b*3;
 	}
 	public boolean contains(String keyword){
-	//TODO
-		return ture;	
+		
+		return this.content.contains(keyword);	
 	}
 	
 	}
-	
