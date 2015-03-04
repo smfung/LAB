@@ -18,7 +18,7 @@ public class TestBlog {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		TestBlog testBlog = new TestBlog();
-		User user = new User(1."COMP3021","COMP3021@cse.ust.hk");
+		User user = new User(1,"COMP3021","COMP3021@cse.ust.hk");
 		Blog myblog = new Blog (user);
 		String prompt = null;
 		
@@ -28,12 +28,15 @@ public class TestBlog {
 			}
 			else if (prompt.startsWith("post")){
 				//TODO
-				Post post = new Post(date,content);
+				Date date=new Date();
+				String content=prompt.substring(5);
+				post post = new post(date,content);
 				myblog.post(post);
 				
 			}
-			else if (prompt.startsWith("delete"))){
+			else if (prompt.startsWith("delete")){
 				// TODO
+				int index=Integer.parseInt(prompt.substring(7))-1;
 				myblog.delete(index);
 			}
 		}
