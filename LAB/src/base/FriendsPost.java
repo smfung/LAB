@@ -9,7 +9,7 @@ public class FriendsPost extends post{
 	}
 	public FriendsPost (Date date,String content,User user){
 		super(date,content);
-		this.user = user;
+		this.friend = user;
 		
 	}
 
